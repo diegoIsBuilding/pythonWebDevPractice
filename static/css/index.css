@@ -21,31 +21,41 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFCBA4;
-    padding: 10px 50px;
+    background-color: #FFFFFF;
+    padding: 10px 40px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
 }
 
 header h1 {
-    color: #4CAF50;
+    color: #000000; /* black color */
+    font-size: 1.8em; /* increased size */
+    font-weight: 600; /* semi-bold */
+    letter-spacing: 1px; /* slight spacing for a techy feel */
+    margin: 0; /* remove default margin */
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 30px; /* increased gap */
 }
 
 nav a {
     text-decoration: none;
-    color: inherit;
-    transition: font-weight 0.3s, text-decoration 0.3s;
+    color: #000000; /* using the green color for contrast */
+    font-weight: 500; /* medium weight */
+    transition: all 0.3s ease; /* smooth transition for all properties */
+    padding: 5px 10px; /* padding for a larger clickable area */
+    border-radius: 15px; /* rounded edges for hover effect */
 }
 
 nav a:hover {
-    font-weight: bold;
-    text-decoration: underline;
+    background-color: #000000; /* black background on hover */
+    color: #FFFFFF; /* white text on hover */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
 }
+
 /* Banner Image */
 .sectionTwo {
     position: relative;
