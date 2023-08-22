@@ -24,14 +24,19 @@ header {
     background-color: #FFFFFF;
     padding: 10px 40px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays above other content */
 }
 
 header h1 {
-    color: #000000; /* black color */
-    font-size: 1.8em; /* increased size */
-    font-weight: 600; /* semi-bold */
-    letter-spacing: 1px; /* slight spacing for a techy feel */
-    margin: 0; /* remove default margin */
+    color: #000000; /* Warm peachy color */
+    font-size: 2.5em; /* Increased size for prominence */
+    font-weight: 700; /* Bold */
+    letter-spacing: 2px; /* Slight spacing for a modern touch */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+    font-family: "Montserrat", sans-serif; /* Assuming you're using the Montserrat font for a modern look */
 }
 
 nav ul {
@@ -184,39 +189,6 @@ nav a:hover {
     color: #333; /* Darker text for better contrast against the light background */
 }
 
-/* Button styling */
-.button-container {
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center;     /* Vertically center */
-    height: 100%;            /* Assuming you want the container to take full height */
-}
-.pricing-button {
-    display: block;
-    margin: auto;
-    background: linear-gradient(135deg, #7f8c8d 0%, #1c2833 100%); /* Same gradient as the section */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    color: #FFF; /* White text */
-    padding: 10px 20px; /* Vertical and horizontal padding */
-    font-size: 1.2em; /* Slightly larger font */
-    cursor: pointer; /* Hand cursor on hover */
-    transition: background 0.3s, transform 0.3s; /* Smooth transition for hover effects */
-    margin-top: 20px; /* Add spacing between the columns and the button */
-}
-
-/* Hover effect for the button */
-.pricing-button:hover {
-    background: linear-gradient(135deg, #1c2833 0%, #7f8c8d 100%); /* Reverse gradient on hover for a dynamic effect */
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-
-/* Active state for the button */
-.pricing-button:active {
-    transform: scale(1); /* Reset the size when the button is pressed */
-}
-
-
 /* Map & Contact Form */
 .sectionFive {
     display: flex;
@@ -300,3 +272,124 @@ window.onscroll = function() {
     }
 }
 */
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, #66BB6A, #43A047); /* Warm green gradient background */
+    padding: 50px 5%;
+    border-radius: 15px; /* Rounded corners for a modern touch */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limiting the width for better aesthetics */
+    margin: 0 auto; /* Centering the section */
+}
+
+.contact-section h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #FFF; /* White color for contrast */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF; /* Light grey color for readability */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column; /* Stack the form elements vertically */
+    gap: 20px; /* Space between form elements */
+}
+
+.contact-section input, .contact-section textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    color: #333; /* Dark color for input text */
+    background: #E0E0E0; /* Light grey background for input fields */
+    transition: box-shadow 0.3s; /* Smooth transition for focus effect */
+}
+
+.contact-section input:focus, .contact-section textarea:focus {
+    box-shadow: 0 0 10px #FFD700; /* Warm yellow glow when input is focused */
+    outline: none; /* Remove default browser outline */
+}
+
+.contact-section button {
+    background: #FFFFFF; /* Warm yellow color */
+    color: #333; /* Dark color for contrast */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.contact-section button:hover {
+    background: #FFFFFF; /* Slightly darker yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.contact-section button:active {
+    transform: scale(1); /* Reset the size when the button is pressed */
+}
+
+.map {
+    padding: 10px; /* Adds some space around the map */
+    background-color: #F5F5F5; /* Light background for contrast */
+    border-radius: 5px; /* Rounded corners for a modern touch */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limiting the width for better aesthetics */
+    margin: 0 auto; /* Centering the map section */
+    overflow: hidden; /* Ensures the iframe corners are also rounded */
+}
+
+.map iframe {
+    display: block; /* Removes any default margins */
+    width: 100%; /* Makes the map responsive */
+    height: 450px; /* Fixed height, but you can adjust as needed */
+    border: none; /* Removes the default border */
+}
+.footer-section {
+    background-color: #FFFFFF; /* Warm green color */
+    padding: 20px 0;
+    color: #000000; /* White text for contrast */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 30px; /* Adjust based on your icon size */
+    height: 30px; /* Adjust based on your icon size */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
