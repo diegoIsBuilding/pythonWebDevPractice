@@ -5,7 +5,7 @@
     <style type="text/css">.body { width: auto; }</style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Peachy Details</title>
+    <title>Peachy Detailing</title>
     <meta name="Carwash Website" content="Carwash Website"/>
     <meta name="Diego Garcia" content="Diego Garcia" />
     <meta name="Practice Website" content="Practice Website" />
@@ -14,7 +14,7 @@
       href="//fonts.googleapis.com/css?family=font1|font2|etc"
       type="text/css"
     />
-    <link rel="icon" href="{{ url_for('static', filename='peachyDetailFavicon.png') }}" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='icons8-peach-48.png') }}" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   </head>
@@ -22,13 +22,12 @@
     <!-- Section 1: Header with Logo to the left and Link to pages on the right -->
     <header class="sectionOne">
       <h1>Peachy Detailing</h1>
-      <!-- <div class="menu-toggle">☰</div> -->
       <nav>
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> Call now</a></li> <!-- Replace +1234567890 with your phone number -->
+            <li><a href="#sectionThree">About</a></li>
+            <li><a href="#sectionFour">Services</a></li>
+            <li><a href="#sectionFive">Contact</a></li>
+            <li><a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> Call now</a></li>
         </ul>
     </nav>    
   </header>
@@ -44,7 +43,7 @@
     </div>
 </div>
   <!-- Section 3: Mission Statement with an image to the right -->
-  <div class="sectionThree">
+  <div class="sectionThree" id="sectionThree">
     <div class="text-content">
         <h2 class="mission-statement">Our Drive</h2>
         <p class="statement">At Peachy Detailing, we're not just driven by the open roads of Palm Springs to Orange County. We're driven by passion, precision, and a commitment to bringing out the best in every vehicle we touch. For us, every car tells a story, and our mission is to ensure that story shines brilliantly, mile after mile. Experience the Peachy difference, where our drive for excellence meets your drive for the perfect shine.</p>
@@ -55,20 +54,20 @@
 </div>
 
   <!-- Section 4: List all services in three columns -->
-  <div class="sectionFour">
+  <div class="sectionFour" id="sectionFour">
     <div class="Auto Detailing Packages">
       <h3>Auto Detailing Packages</h3>
-      <p>Paint Correction</p>
-      <p>Paint Enhancement</p>
-      <p>Ceramic Coating</p>
-      <p>Clay Bar & Wax</p>
+      <p>Paint Correction - $800</p>
+      <p>Paint Enhancement - $400</p>
+      <p>Ceramic Coating - $800</p>
+      <p>Clay Bar & Wax - $150</p>
     </div>
     <div class="Car Wash Packages">
       <h3>Car Wash Packages</h3>
-      <p>Basic Package</p>
-      <p>Silver Package</p>
-      <p>Gold Package</p>
-      <p>Diamond Package</p>
+      <p>Basic Package - $50</p>
+      <p>Silver Package - $65</p>
+      <p>Gold Package - $95</p>
+      <p>Diamond Package - $125</p>
     </div>
     <div class="Other Services">
       <h3>Other Services</h3>
@@ -80,17 +79,43 @@
       <p>Steam Cleaning</p>
     </div>
   </div>
-  <div class="button-container">
-    <button class="pricing-button">Call for Pricing</button>
-</div>
 <!-- Section 5: Two columns - left column: map - right column: contact form -->
-<div class="sectionFive">
+<div class="sectionFive" id="sectionFive">
   <div class="map">
-    <p>MAP</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425170.9005035349!2d-118.11005037813663!3d33.6403766178514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc925c54d5f7cf%3A0xdea6c3618ff0d607!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1692670939951!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-  <div class="contact-form">
-    <p>CONTACT FORM</p>
-  </div>
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Reach out to us for any inquiries or to book an appointment.</p>
+    <form action="/submit" method="post">
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="tel" name="phone" placeholder="Your Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <input type="email" name="email" placeholder="Your Email">
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </div>
+</div>
+<footer class="footer-section">
+  <div class="footer-content">
+      <h2>Peachy Detailing</h2>
+      <p>&copy; 2023 Peachy Detailing. All rights reserved.</p>
+      <div class="social-icons">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="static/images/icons8-facebook-48.png" alt="Facebook">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="static/images/icons8-instagram-48.png" alt="Instagram">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="static/images/icons8-twitter-48.png" alt="Twitter">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="static/images/icons8-snapchat-circled-logo-48.png" alt="Snapchat">
+          </a>
+      </div>
+  </div>
+</footer>
+
   </body>
 </html>
