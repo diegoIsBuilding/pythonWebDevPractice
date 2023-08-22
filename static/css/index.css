@@ -53,7 +53,7 @@ nav a i {
     margin-right: 5px; /* Adds a little space between the icon and the text */
 }
 nav a:hover {
-    background-color: #000000; /* black background on hover */
+    background-color: #4CAF50; /* black background on hover */
     color: #FFFFFF; /* white text on hover */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
 }
@@ -153,12 +153,71 @@ nav a:hover {
 
 /* Services */
 .sectionFour {
-    background-color: #FFD700;
+    background: linear-gradient(135deg, #7f8c8d 0%, #1c2833 100%);
     display: flex;
-    justify-content: space-between;
-    padding: 50px 0;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space out the columns */
+    padding: 50px 5%;
+    gap: 30px;
 }
-/* Man & Contact Form */
+
+/* Common styles for each service column */
+.sectionFour > div {
+    flex: 1; /* Ensures each column takes up equal space */
+    background-color: #F5F5F5; /* Light background for each column for contrast */
+    padding: 20px; /* Padding inside each column */
+    border-radius: 10px; /* Rounded corners for a modern touch */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.sectionFour h3 {
+    font-size: 1.5em; /* Increase size for prominence */
+    margin-bottom: 20px; /* Space between the heading and the first service */
+    color: #4CAF50; /* Secondary color for contrast */
+    border-bottom: 2px solid #000000; /* Accent color underline for a modern touch */
+    padding-bottom: 10px; /* Padding to space out the underline */
+}
+
+.sectionFour p {
+    margin-bottom: 10px; /* Space between services */
+    font-size: 1.1em; /* Slightly larger font for readability */
+    color: #333; /* Darker text for better contrast against the light background */
+}
+
+/* Button styling */
+.button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    height: 100%;            /* Assuming you want the container to take full height */
+}
+.pricing-button {
+    display: block;
+    margin: auto;
+    background: linear-gradient(135deg, #7f8c8d 0%, #1c2833 100%); /* Same gradient as the section */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    color: #FFF; /* White text */
+    padding: 10px 20px; /* Vertical and horizontal padding */
+    font-size: 1.2em; /* Slightly larger font */
+    cursor: pointer; /* Hand cursor on hover */
+    transition: background 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    margin-top: 20px; /* Add spacing between the columns and the button */
+}
+
+/* Hover effect for the button */
+.pricing-button:hover {
+    background: linear-gradient(135deg, #1c2833 0%, #7f8c8d 100%); /* Reverse gradient on hover for a dynamic effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active state for the button */
+.pricing-button:active {
+    transform: scale(1); /* Reset the size when the button is pressed */
+}
+
+
+/* Map & Contact Form */
 .sectionFive {
     display: flex;
     justify-content: space-between;
