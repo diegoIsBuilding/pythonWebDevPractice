@@ -49,7 +49,9 @@ nav a {
     padding: 5px 10px; /* padding for a larger clickable area */
     border-radius: 15px; /* rounded edges for hover effect */
 }
-
+nav a i {
+    margin-right: 5px; /* Adds a little space between the icon and the text */
+}
 nav a:hover {
     background-color: #000000; /* black background on hover */
     color: #FFFFFF; /* white text on hover */
@@ -59,11 +61,15 @@ nav a:hover {
 /* Banner Image */
 .sectionTwo {
     position: relative;
+    overflow: hidden; /* This will ensure that the image doesn't overflow the container */
 }
 
 .sectionTwo img {
     width: 100%;
+    /* Adjusting the height to auto might stretch or shrink the image. 
+       If you want to maintain the aspect ratio, you might want to adjust the width instead or use object-fit */
     height: auto;
+    display: block; /* Removes any default margins or padding */
 }
 
 .sectionTwo::before {
@@ -75,7 +81,6 @@ nav a:hover {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
 }
-
 .sectionTwo .banner-text {
     position: absolute;
     top: 50%;
@@ -83,7 +88,35 @@ nav a:hover {
     transform: translate(-50%, -50%);
     color: #FFF;
     text-align: center;
+    z-index: 2; /* Ensures the text is above the overlay */
 }
+.sectionTwo .banner-text h2 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.sectionTwo .banner-text p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.sectionTwo .banner-button {
+    background-color: #4CAF50; /* Using the green color you provided earlier */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: "Montserrat", sans-serif; /* Keeping the font consistent with the header */
+    font-size: 1em;
+}
+
+.sectionTwo .banner-button:hover {
+    transform: scale(1.15); /* Slightly enlarging the button on hover for a dynamic effect */
+}
+
 /* Mission Statement */
 .sectionThree {
     display: flex;
@@ -115,19 +148,35 @@ nav a:hover {
     /* Styles for tablet view */
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+/* Mobile responsiveness */
+@media (max-width: 768px) { /* This is a common breakpoint for tablets and below */
     header {
-        flex-direction: column;
+        padding: 5px 20px; /* Reduced padding for mobile */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Slightly smaller logo text */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        display: none; /* Hide navigation links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Reduced gap */
+        position: absolute; /* Absolute positioning to show menu on top of other content */
+        top: 60px; /* Position below the header */
+        right: 20px; /* Align to the right */
+        background-color: #FFFFFF;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
     }
 
-    .sectionThree, .sectionFour, .sectionFive {
-        flex-direction: column;
+    nav ul.active { /* When menu is active/toggled */
+        display: flex;
+    }
+
+    .menu-toggle { /* Hamburger menu icon */
+        display: block;
+        cursor: pointer;
     }
 }
 /* Additonal Elements */
