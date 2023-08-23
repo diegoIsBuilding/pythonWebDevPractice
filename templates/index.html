@@ -22,6 +22,17 @@
     <!-- Section 1: Header with Logo to the left and Link to pages on the right -->
     <header class="sectionOne">
       <h1>Peachy Detailing</h1>
+      <div class="overlay">
+        <span class="close-btn">&times;</span> <!-- This is the "x" button -->
+        <nav>
+            <ul>
+              <li><a href="#sectionThree">About</a></li>
+              <li><a href="#sectionFour">Services</a></li>
+              <li><a href="#sectionFive">Contact</a></li>
+              <li><a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> Call now</a></li>
+            </ul>
+        </nav>
+    </div>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
     </div>
@@ -123,6 +134,15 @@
   document.querySelector('.menu-toggle').addEventListener('click', function() {
       document.querySelector('nav ul').classList.toggle('active');
   });
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.toggle('active');
+});
+// Close the overlay when the "x" button is clicked
+document.querySelector('.close-btn').addEventListener('click', function() {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.remove('active');
+});
 </script>
   </body>
 </html>
