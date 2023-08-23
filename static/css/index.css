@@ -205,9 +205,19 @@ nav a:hover {
 @media (max-width: 768px) {
     /* Header and Navigation */
     header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row; /* Ensures the header uses flexbox in a row direction */
+        justify-content: space-between; /* Pushes the H1 to the left and the menu icon to the right */
+        align-items: center; /* Vertically centers the H1 and menu icon */
+    }
+    header h1 {
+        margin-right: 10px; /* Adds some space between the h1 and the menu */
+    }
+    .menu-toggle {
+        order: 2; /* Ensures the menu toggle is the second item, after the H1 */
+    }
+
+    nav {
+        order: 3; /* Ensures the navigation is the third item, after the H1 and menu toggle */
     }
 
     nav ul {
@@ -447,4 +457,82 @@ window.onscroll = function() {
     nav ul {
         display: none; /* Hide the menu by default on mobile */
     }
+}
+
+
+/* General adjustments for all screens */
+.contact-section, .map {
+    box-sizing: border-box; /* This ensures padding is included in the total width */
+    width: 100%; /* Ensures they take the full width of their container */
+    max-width: 100%; /* Prevents them from exceeding the viewport width */
+}
+
+@media (max-width: 768px) {
+    /* Adjustments specifically for mobile screens */
+
+    .contact-section, .map {
+        padding-left: 15px; /* Add some padding to ensure content doesn't touch the left edge */
+        padding-right: 15px; /* Add some padding to ensure content doesn't touch the right edge */
+    }
+
+    .contact-section form input, .contact-section form textarea {
+        width: 100%; /* Ensures form fields take up the full width */
+        box-sizing: border-box; /* Ensures padding and border are included in the total width */
+    }
+}
+
+/* Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #7f8c8d 0%, #1c2833 100%);
+    z-index: 999; /* Ensures the overlay is above other content */
+    transform: translateX(100%); /* Initially push it off the screen */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the slide effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay.active {
+    transform: translateX(0); /* Bring it back onto the screen when active */
+}
+
+.overlay nav {
+    width: 70%; /* Adjust as needed */
+    max-width: 400px; /* Adjust as needed */
+}
+
+.overlay nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay nav a {
+    font-size: 1.5em; /* Larger font size for the overlay */
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em; /* Adjust as needed */
+    cursor: pointer;
+    color: #FFF; /* White color for visibility against the gradient background */
+    z-index: 1001; /* Ensures the button is above the overlay content */
+}
+/* Adjusting the color of the nav links in the overlay */
+.overlay nav a {
+    color: #FFFFFF; /* White color */
+}
+
+/* Maintaining the hover animation */
+.overlay nav a:hover {
+    background-color: #4CAF50; /* Green background on hover */
+    color: #FFFFFF; /* White text on hover */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
